@@ -47,7 +47,7 @@ def main():
     model.summary()
 
     model.fit_generator(
-        iter(lambda: make_batch(BATCH_SIZE), None), steps_per_epoch=500, epochs=2,
+        iter(lambda: make_batch(BATCH_SIZE), None), steps_per_epoch=500, epochs=30,
     )
     model.save("model.hdf5")
     print("Done")
