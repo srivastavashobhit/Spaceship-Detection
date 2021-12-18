@@ -6,7 +6,6 @@ from tqdm import tqdm
 
 def eval():
     model = keras.models.load_model("model.hdf5")
-
     ious = []
     for _ in tqdm(range(1000)):
         img, label = make_data()
