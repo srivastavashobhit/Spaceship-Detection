@@ -39,16 +39,15 @@ def make_batch(batch_size):
     return imgs, labels
 
 
-def main():
+def main(epoch_num=30):
     BATCH_SIZE = 64
 
     model = gen_model()
     model.compile(loss="mse", optimizer="adam")
     model.summary()
 
-
     model.fit_generator(
-        iter(lambda: make_batch(BATCH_SIZE), None), steps_per_epoch=500, epochs=30,
+        iter(lambda: make_batch(BATCH_SIZE), None), steps_per_epoch=500, epochs=epoch_num,
     )
     model.save("model.hdf5")
     print("Done")
