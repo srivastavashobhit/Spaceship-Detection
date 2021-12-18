@@ -46,6 +46,7 @@ def main():
     model.compile(loss="mse", optimizer="adam")
     model.summary()
 
+
     model.fit_generator(
         iter(lambda: make_batch(BATCH_SIZE), None), steps_per_epoch=500, epochs=30,
     )
